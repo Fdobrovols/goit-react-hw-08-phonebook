@@ -24,7 +24,18 @@ export default function Contacts() {
       <ContactForm />
       <Filter />
       <title>Contacts</title>
-      {isLoading && !error && <b>Loading...</b>}
+         
+           {isLoading && !error && (
+        <b
+          style={{
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            marginTop: '10px',
+          }}
+        >
+          Loading...
+        </b>
+      )}
       <ContactList />
     </div>
   );

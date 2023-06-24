@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import Notiflix from 'notiflix';
 
 axios.defaults.baseURL = 'https://648b660517f1536d65eae8c0.mockapi.io/contacts/';
 
@@ -20,7 +21,7 @@ export const register = createAsyncThunk(
       setAuthHeader(response.data.token);
       return response.data;
     } catch (error) {
-      console.log(error);
+      Notiflix.Notify.warning('Something went wrong. Please, try again .');
       return thunkAPI.rejectWithValue(error.message);
     }
   }
