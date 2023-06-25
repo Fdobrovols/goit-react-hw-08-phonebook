@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types';
-import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteContact, fetchContacts } from 'redux/contacts/operations';
+import { deleteContact} from 'redux/contacts/operations';
 import { selectContacts, selectStatusFilter } from 'redux/selectors';
-
 import css from './ContactList.module.css';
 
 export const ContactList = () => {
@@ -15,10 +13,6 @@ export const ContactList = () => {
   const filteredContacts = contacts.filter(({ name }) =>
     name.toLowerCase().includes(normalizedFilter)
   );
-
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
 
   return (
     <ul className={css.contactList}>
