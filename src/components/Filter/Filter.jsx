@@ -22,10 +22,11 @@ export default function Filter() {
         name={filter}
         value={filter}
         onChange={onChange}
+        placeholder="Please write name"
       />
     </label>
   );
-};
+}
 
 Filter.propTypes = {
   filter: PropTypes.string,

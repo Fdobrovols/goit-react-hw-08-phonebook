@@ -10,7 +10,6 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-
 import persistReducer from 'redux-persist/es/persistReducer';
 import { authReducer } from './auth/authSlice';
 import storage from 'redux-persist/lib/storage';
@@ -23,6 +22,7 @@ const authPersistConfig = {
 
 export const store = configureStore({
   reducer: {
+    auth: persistReducer(authPersistConfig, authReducer),
     contacts: contactsReducer,
     filter: filterReducer,
   },
